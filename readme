@@ -1,0 +1,4 @@
+playground for a fullstack app
+
+frontend is react 
+backend is django (for provide api connect to postgresql via docker)
