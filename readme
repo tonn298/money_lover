@@ -2,3 +2,7 @@ playground for a fullstack app
 
 frontend is react 
 backend is django (for provide api connect to postgresql via docker)
+
+
+TODO:
+after setup all things and app running both backend and frontend >>>>> move creden to env

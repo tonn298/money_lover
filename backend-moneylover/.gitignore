@@ -1,2 +1,5 @@
 /data
 /money_lover_config/__pycache__
+/users/__pycache__
+/users/api/__pycache__
+/users/migrations/__pycache__
