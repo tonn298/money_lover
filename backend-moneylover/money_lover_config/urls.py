@@ -27,4 +27,5 @@ urlpatterns = [
     path('users/',include('users.api.urls')),
     path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('app/',include('money_lover_app.api.urls'))
 ]
