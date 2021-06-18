@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     #app
     'users.apps.UsersConfig',
+    'money_lover_app.apps.MoneyLoverAppConfig',
 
     #libs
     'rest_framework',
