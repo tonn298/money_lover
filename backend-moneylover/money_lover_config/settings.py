@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #app
-    'users.apps.UsersConfig',
+    'authen_api.apps.AuthenApiConfig',
     'money_lover_app.apps.MoneyLoverAppConfig',
 
     #libs

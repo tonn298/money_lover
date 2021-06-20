@@ -2,8 +2,7 @@ from django.shortcuts import render
 
 
 from django.contrib.auth.models import User
-from .serializers import RegisterSerializer
-#  ,ChangePasswordSerializer
+from .serializers import RegisterSerializer, ChangePasswordSerializer
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 
@@ -27,8 +26,8 @@ class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
 
 
-# class ChangePasswordView(generics.UpdateAPIView):
+class ChangePasswordView(generics.UpdateAPIView):
 
-#     queryset = User.objects.all()
-#     permission_classes = (IsAuthenticated,)
-#     serializer_class = ChangePasswordSerializer
+    queryset = User.objects.all()
+    permission_classes = (IsAuthenticated,)
+    serializer_class = ChangePasswordSerializer
