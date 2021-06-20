@@ -2,9 +2,13 @@
 
 
 # from django.contrib.auth.models import User
+# libs
 from rest_framework import serializers
+# from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
+# written models
 from ..models import Transaction, Category
+
 
 
 # class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -28,3 +32,17 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
         model = Category
         # fields = ['name', 'id']
         fields = '__all__'
+
+
+
+
+#  for payload
+# class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+
+#     @classmethod
+#     def get_token(cls, user):
+#         token = super(MyTokenObtainPairSerializer, cls).get_token(user)
+
+#         # Add custom claims
+#         token['username'] = user.username
+#         return token

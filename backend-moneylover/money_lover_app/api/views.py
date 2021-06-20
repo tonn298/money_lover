@@ -6,6 +6,9 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
 # from api.serializers import UserSerializer
+# from rest_framework_simplejwt.views import TokenObtainPairView
+# from rest_framework.permissions import AllowAny
+# from .serializers import MyTokenObtainPairSerializer
 
 
 
@@ -31,3 +34,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
     serializer_class = CategorySerializer
 
 
+#  for payload
+# class MyObtainTokenPairView(TokenObtainPairView):
+#     permission_classes = (AllowAny,)
+#     serializer_class = MyTokenObtainPairSerializer

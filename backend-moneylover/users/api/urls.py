@@ -8,6 +8,7 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'register',views.UserViewSet)
+# router.register(r'token',views.MyObtainTokenPairView)
 
 urlpatterns = [
     path('', include(router.urls)),

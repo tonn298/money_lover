@@ -20,11 +20,13 @@ class Transaction(models.Model):
     is_expense = models.BooleanField(default=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE,default=None)
+    permission_classes = [IsAuthenticated]
+
     # created = models.DateTimeField(auto_now_add=True)
     # modified = models.DateTimeField(auto_now=True)
     def __str__(self):
         if (self.is_expense == True): 
-            transaction_type = '+'
-        else: transaction_type = '-'
+            transaction_type = '-'
+        else: transaction_type = '+'
         value = transaction_type + ' ' +  str(self.amount) + ' from user ' + str(self.user.username)
         return  value
