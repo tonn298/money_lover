@@ -8,3 +8,8 @@
 /money_lover_app/__pycache__
 /money_lover_app/api/__pycache__
 /money_lover_app/migrations/__pycache__
+
+
+/auth/__pycache__
+/auth/api/__pycache__
+/auth/migrations/__pycache__
