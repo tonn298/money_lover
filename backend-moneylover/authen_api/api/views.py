@@ -3,6 +3,7 @@ from django.shortcuts import render
 
 from django.contrib.auth.models import User
 from .serializers import RegisterSerializer, ChangePasswordSerializer
+# ,UpdateUserSerializer
 from rest_framework import generics,viewsets
 from rest_framework.permissions import IsAuthenticated
 
@@ -34,3 +35,10 @@ class ChangePasswordView(generics.UpdateAPIView):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
+
+
+# class UpdateProfileView(generics.UpdateAPIView):
+
+#     queryset = User.objects.all()
+#     permission_classes = (IsAuthenticated,)
+#     serializer_class = UpdateUserSerializer

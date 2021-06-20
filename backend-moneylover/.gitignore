@@ -1,15 +1,15 @@
 /data
 /money_lover_config/__pycache__
 
-/users/__pycache__
-/users/api/__pycache__
-/users/migrations/__pycache__
+# /users/__pycache__
+# /users/api/__pycache__
+# /users/migrations/__pycache__
 
 /money_lover_app/__pycache__
 /money_lover_app/api/__pycache__
 /money_lover_app/migrations/__pycache__
 
 
-/auth/__pycache__
-/auth/api/__pycache__
-/auth/migrations/__pycache__
+/authen_api/__pycache__
+/authen_api/api/__pycache__
+/authen_api/migrations/__pycache__
