@@ -6,3 +6,34 @@ backend is django (for provide api connect to postgresql via docker)
 
 TODO:
 after setup all things and app running both backend and frontend >>>>> move creden to env
+
+
+
+
+STAGES of projects
+
+- authentication with users
+  api for
+  - register user
+  - token auth
+  - login
+  - logout
+  
+- Money_tracker app > backend
+  - database design
+    - model for database
+    - authen to see database
+  - api
+    - data belong to creators(the user that login)
+    - CRUD for transaction and category model
+    
+- Money_lover app > frontend
+  - set up react app
+  - basic authen UI
+  - Link to API
+  - Design research
+- After finish on design > style things
+
+TODOS after all this 
+imprement document management system >>> new app
+  
