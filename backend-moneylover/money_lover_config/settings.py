@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     #libs
     'rest_framework',
+    'rest_framework_simplejwt.token_blacklist',
 ]
 
 MIDDLEWARE = [
@@ -152,6 +153,8 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=15),
     'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True
+    
 }
 
 # DEFAULTS = {
