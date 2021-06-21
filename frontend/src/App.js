@@ -1,5 +1,10 @@
-import Home from "./pages/home";
 import styled from "styled-components";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import Home from "./pages/home";
+import Login from "./pages/auth/login";
+import Navbar from "./components/Navbar";
+import AddTransaction from "./pages/transactions/addTransaction";
 
 const AppStyled = styled.div`
   /* TODOS make this a desktop view later */
@@ -8,10 +13,24 @@ const AppStyled = styled.div`
 `;
 
 const App = () => {
+  // use router link
   return (
-    <AppStyled>
-      <Home></Home>
-    </AppStyled>
+    <Router>
+      <Navbar />
+      <AppStyled>
+        <Switch>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/add">
+            <AddTransaction />
+          </Route>
+        </Switch>
+      </AppStyled>
+    </Router>
   );
 };
 

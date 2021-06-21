@@ -6,7 +6,7 @@ const HomeStyled = styled.div`
 `;
 
 const Home = () => {
-  return <HomeStyled>yo</HomeStyled>;
+  return <HomeStyled>HOME</HomeStyled>;
 };
 
 export default Home;
