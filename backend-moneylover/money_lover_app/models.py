@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from rest_framework.permissions import IsAuthenticated
 
+from rest_framework import permissions
+from .api.permissions import IsOwnerOrReadOnly
 
 # Create your models here.
 
@@ -17,11 +19,11 @@ class Category(models.Model):
 class Transaction(models.Model):
     amount = models.DecimalField(max_digits=20, decimal_places=2)
     description = models.CharField(max_length=1000, default=None)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE,default=None)
     is_expense = models.BooleanField(default=True)
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly,
+                          IsOwnerOrReadOnly]
 
     # created = models.DateTimeField(auto_now_add=True)
     # modified = models.DateTimeField(auto_now=True)
@@ -29,5 +31,5 @@ class Transaction(models.Model):
         if (self.is_expense == True): 
             transaction_type = '-'
         else: transaction_type = '+'
-        value = transaction_type + ' ' +  str(self.amount) + ' from user ' + str(self.user.username)
+        value = transaction_type + ' ' +  str(self.amount) + ' from user ' + str(self.owner.username)
         return  value

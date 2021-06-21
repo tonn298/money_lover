@@ -14,10 +14,10 @@ from ..models import Transaction, Category
 
 class TransactionSerializer(serializers.HyperlinkedModelSerializer):
     category_name = serializers.ReadOnlyField(source='category.name')
-    user_name = serializers.ReadOnlyField(source='user.username')
+    user_name = serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Transaction
-        fields = ['id','amount', 'description','user', 'user_name','category', 'category_name']
+        fields = ['id','amount', 'description','owner', 'user_name','category', 'category_name']
 
 
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
