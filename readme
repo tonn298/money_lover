@@ -1,12 +1,15 @@
 playground for a fullstack app
 
+This app allow user to track money spend by adding transations.
+
+
 frontend is react 
-backend is django (for provide api connect to postgresql via docker)
+backend is django (for provide api connect to postgresql via docker image)
 
 
 TODO:
-after setup all things and app running both backend and frontend >>>>> move creden to env
-
+- after setup all things and app running both backend and frontend >>>>> move creden to env
+- Add proper read me in md lang
 
 
 
