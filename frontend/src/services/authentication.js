@@ -16,3 +16,16 @@ export const loginUser = async ({ username, password }) => {
 // export const logOutUser = async(body)=>{
 
 // }
+
+export const registerUser = async (param) => {
+  const data = await axiosInstance
+    .post(endpoint.register, param)
+    .then((response) => {
+      const result = response.data;
+      return result;
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+  return data;
+};

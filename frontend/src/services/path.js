@@ -9,6 +9,7 @@ export const endpoint = {
   transactions: "/app/transactions/",
   category: "/app/category/",
   login: "/authen-api/login/",
+  register: "/authen-api/register/",
 };
 
 export const axiosInstance = axios.create({

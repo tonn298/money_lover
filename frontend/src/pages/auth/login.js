@@ -121,7 +121,7 @@ const Login = () => {
             </Segment>
           </Form>
           <Message>
-            New to us? <Link to="/sign-up">Sign Up</Link>
+            <Link to="/sign-up">Sign Up</Link>
           </Message>
         </Grid.Column>
       </Grid>
