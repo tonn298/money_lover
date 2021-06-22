@@ -12,3 +12,7 @@ export const loginUser = async ({ username, password }) => {
     });
   return data;
 };
+
+// export const logOutUser = async(body)=>{
+
+// }

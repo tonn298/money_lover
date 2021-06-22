@@ -9,6 +9,8 @@ const AddTransaction = () => {
   return (
     <AddTransactionStyled>
       <h1>AddTransaction</h1>
+      <br />
+      <button> TEST </button>
     </AddTransactionStyled>
   );
 };

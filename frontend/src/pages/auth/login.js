@@ -1,3 +1,5 @@
+//TODOS add REDUX
+
 // lib
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
@@ -24,11 +26,17 @@ const LoginStyled = styled.div`
   }
 `;
 
+const LogOutStyled = styled.div`
+  background-color: #aaaaaa;
+  padding: 12px;
+`;
+
 const Login = () => {
   const [token, setToken] = useState(null);
   const [refreshToken, setRefreshToken] = useState(null);
 
-  const [isLogin, setIsLogin] = useState(false);
+  const [isClcikLogIn, setIsClcikLogIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -41,20 +49,43 @@ const Login = () => {
     setStateToken(response);
   };
 
+  const handleLogout = () => {
+    // console.log("handle log out :  ", refreshToken);
+    logout(refreshToken);
+  };
+  const logout = (refreshToken) => {
+    const body = { refresh_token: refreshToken };
+    console.log("actual log out", body);
+    setIsLoggedIn(false);
+    // all this make it one
+    setIsClcikLogIn(false);
+    setToken(null);
+    setRefreshToken(null);
+  };
+
   const setStateToken = (res) => {
     setToken(res.access);
     setRefreshToken(res.refresh);
-    setIsLogin(true);
+    setIsClcikLogIn(true);
   };
 
   useEffect(() => {
-    console.log("useEffectRun +1");
+    console.log("useEffectRun +1 from is Clcik logged in");
     if (token !== null && refreshToken !== null) {
       console.log("User have log in");
+      setIsLoggedIn(true);
+      return;
     }
-  }, [isLogin]);
+    return console.log("not logged in yet// logout");
+  }, [isClcikLogIn]);
 
-  return (
+  return isLoggedIn ? (
+    <LogOutStyled>
+      you have logged in
+      <br />
+      <button onClick={() => handleLogout()}>Log out ? </button>
+    </LogOutStyled>
+  ) : (
     <LoginStyled>
       <Grid className="loginForm" textAlign="center" verticalAlign="middle">
         <Grid.Column style={{ maxWidth: 450 }}>

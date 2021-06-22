@@ -28,7 +28,11 @@ const TransactionSummery = () => {
   return (
     <TransactionStyled>
       {transactions === null ? (
-        <div style={{ backgroundColor: "#ff0000" }}> no transaction </div>
+        <div style={{ backgroundColor: "#ff0000" }}>
+          no transaction
+          <br />
+          <button> TEST </button>
+        </div>
       ) : (
         <div>
           {transactions === undefined
