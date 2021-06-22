@@ -1,7 +1,7 @@
-import { endpoint, config } from "./path";
+import { endpoint, axiosInstance } from "./path";
 
 export const getCategories = async () => {
-  const data = await config
+  const data = await axiosInstance
     .get(endpoint.category)
     .then((response) => {
       const result = response.data;

@@ -1,8 +1,8 @@
-import { endpoint, config } from "./path";
+import { endpoint, axiosInstance } from "./path";
 import { convertDataForApi } from "../utils/format";
 
 export const getTransactions = async () => {
-  const data = await config
+  const data = await axiosInstance
     .get(endpoint.transactions)
     .then((response) => {
       const result = response.data;
@@ -18,7 +18,7 @@ export const createTransaction = async (data) => {
   const queryData = convertDataForApi(data);
   console.log(queryData);
 
-  const request = await config
+  const request = await axiosInstance
     .post(endpoint.transactions, queryData)
     .then(function(response) {
       console.log(response.data);

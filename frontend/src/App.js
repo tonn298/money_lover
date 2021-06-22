@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import Login from "./pages/auth/login";
 import Navbar from "./components/Navbar";
 import AddTransaction from "./pages/transactions/addTransaction";
+import SignUp from "./pages/auth/signUp";
 
 const AppStyled = styled.div`
   /* TODOS make this a desktop view later */
@@ -27,6 +28,9 @@ const App = () => {
           </Route>
           <Route exact path="/add">
             <AddTransaction />
+          </Route>
+          <Route exact path="/sign-up">
+            <SignUp />
           </Route>
         </Switch>
       </AppStyled>

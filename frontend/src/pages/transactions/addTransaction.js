@@ -6,7 +6,11 @@ const AddTransactionStyled = styled.div`
 `;
 
 const AddTransaction = () => {
-  return <AddTransactionStyled>AddTransaction</AddTransactionStyled>;
+  return (
+    <AddTransactionStyled>
+      <h1>AddTransaction</h1>
+    </AddTransactionStyled>
+  );
 };
 
 export default AddTransaction;
