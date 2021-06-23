@@ -1,7 +1,8 @@
-playground for a fullstack app
+playground for a fullstack app using django and react
 
-This app allow user to track money spend by adding transations.
+This is a web app that let user add/edit/delete their transaction and keep track of money they spend.
 
+THe purpose is to tryout authenication for django.
 
 frontend is react 
 backend is django (for provide api connect to postgresql via docker image)
